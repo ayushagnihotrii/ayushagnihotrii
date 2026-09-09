@@ -1,25 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" width="100%" height="100" preserveAspectRatio="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 80" width="100%" height="80" preserveAspectRatio="none">
   <defs>
-    <linearGradient id="footerWave1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#7000FF" stop-opacity="0.35" />
-      <stop offset="50%" stop-color="#00BBF9" stop-opacity="0.4" />
-      <stop offset="100%" stop-color="#00F5D4" stop-opacity="0.35" />
+    <linearGradient id="footerFlameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9D4EDD" />
+      <stop offset="35%" stop-color="#FF0055" />
+      <stop offset="70%" stop-color="#FF5400" />
+      <stop offset="100%" stop-color="#FFB703" />
     </linearGradient>
 
-    <linearGradient id="footerWave2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00BBF9" stop-opacity="0.6" />
-      <stop offset="50%" stop-color="#7000FF" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#00F5D4" stop-opacity="0.7" />
-    </linearGradient>
-
-    <linearGradient id="footerWave3" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00F5D4" />
-      <stop offset="50%" stop-color="#00BBF9" />
-      <stop offset="100%" stop-color="#7000FF" />
-    </linearGradient>
+    <filter id="footerGlow" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
   </defs>
 
-  <path d="M 0,65 C 200,25 400,95 600,50 C 800,10 1000,85 1200,45 L 1200,100 L 0,100 Z" fill="url(#footerWave1)" />
-  <path d="M 0,75 C 180,35 380,95 620,60 C 840,25 1020,80 1200,55 L 1200,100 L 0,100 Z" fill="url(#footerWave2)" />
-  <path d="M 0,85 C 220,50 420,100 650,75 C 870,45 1050,90 1200,70 L 1200,100 L 0,100 Z" fill="url(#footerWave3)" opacity="0.9" />
+  <!-- Glowing Neon Cyber Line -->
+  <line x1="0" y1="12" x2="1200" y2="12" stroke="url(#footerFlameGrad)" stroke-width="2" filter="url(#footerGlow)" />
+
+  <!-- Cyber Slanted Panels -->
+  <path d="M 0,14 L 320,14 L 360,35 L 0,35 Z" fill="#9D4EDD" opacity="0.4" />
+  <path d="M 300,14 L 620,14 L 660,45 L 340,45 Z" fill="#FF0055" opacity="0.6" />
+  <path d="M 600,14 L 920,14 L 960,45 L 640,45 Z" fill="#FF5400" opacity="0.7" />
+  <path d="M 900,14 L 1200,14 L 1200,35 L 940,35 Z" fill="#FFB703" opacity="0.5" />
+
+  <!-- Secondary Lower Band -->
+  <path d="M 0,35 L 450,35 L 490,65 L 0,65 Z" fill="#FF0055" opacity="0.3" />
+  <path d="M 430,35 L 850,35 L 890,75 L 470,75 Z" fill="#FF5400" opacity="0.5" />
+  <path d="M 830,35 L 1200,35 L 1200,65 L 870,65 Z" fill="#FFB703" opacity="0.3" />
+
+  <!-- Bottom Line -->
+  <line x1="0" y1="78" x2="1200" y2="78" stroke="#FF5400" stroke-width="1" opacity="0.4" />
 </svg>
